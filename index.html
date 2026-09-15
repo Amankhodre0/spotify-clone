@@ -1,0 +1,686 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/index.css' %}">
+
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-1">
+            <div class="logo">
+                <a href=""><i class="fa-brands fa-spotify"></i></a>
+            </div>
+        </div>
+        <div class="navbar-2">
+            <div class="nav-home">
+                <div class="home">
+                    <a href=""><i class="fa-solid fa-house"></i></a>
+                </div>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="What do you want to play?" id="searchInput">
+                <i class="fas fa-times clear-icon" onclick="document.getElementById('searchInput').value = ''"></i>
+            </div>
+        </div>
+        <div class="navbar-3">
+            <div class="text">
+                <div class="premium"><a href="">Premium</a></div>
+                <div class="Support"><a href="">Support</a></div>
+                <div class="Download"><a href="{% url 'download'%}">Download</a></div>
+            </div>
+            <div class="line">|</div>
+            <div class="install">
+                <a href=""><i class="fa-solid fa-circle-arrow-down"></i> Install App</a>
+            </div>
+            <div class="login">
+                <button onclick="window.location.href='sign'"> Sign Up</button>
+            </div>
+            <div class="login">
+                <button onclick="window.location.href='login'">Login</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+
+     <div class="content">
+        <div class="left-con">
+            <div class="top-library">
+                <div class="left-nav">
+                    <a href=""><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="">Your Library</a>
+                    <div class="plus"><a href=""><i class="fas fa-plus"></i></a></div>
+                </div>
+            </div>
+
+            <div class="bottom-library">
+                <div class="create1">
+                    <h2>Create your first playlist </h2>
+                    <p>It's easy we'll help you </p>
+                    <button>Create Playlist</button>
+                </div>
+
+                <div class="create2">
+                    <h2>Let's find some podcasts to follow </h2>
+                    <p>We'll keep you updated on new episodes </p>
+                    <button>Browse Podcasts</button>
+                </div>
+
+                <div class="options">
+                    <div class="line1">
+                        <a href="">Legal</a>
+                        <a href="">Safety & Privacy Centre</a>
+                    </div>
+                    <div class="line2">
+                        <a href="">Privacy Policy</a>
+                        <a href="">Cookies</a>
+                        <a href="">About Ads</a>
+                    </div>
+                    <div class="line3">
+                        <a href="">Accesibility</a>
+                    </div>
+                </div>
+                <div class="last">
+                    <button>
+                        <i class="fa-solid fa-globe"></i>
+                        <p>English</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="right-con">
+            <div class="right-nav">
+                <a href="">
+                    <h2>Trending Songs</h2>
+                </a>
+                <a href="">Show all</a>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="arrow left" onclick="scrollSlider('slider', -1)">←</button>
+                <div class="slider" id="slider">
+                    <div class="card">
+                        <a href=""><img src="static/perfect.jpg" alt="Perfect"></a>
+                        <a href="">
+                            <h4>Perfect</h4>
+                        </a>
+                        <a href="">
+                            <p>Guru Randhawa, Gill</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static/sundari.jpg" alt="Sundari"></a>
+                        <a href="">
+                            <h4>Sundari</h4>
+                        </a>
+                        <a href="">
+                            <p>Sanju Rathod</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static/Guns-and-Roses.jpg" alt="Guns & Roses"></a>
+                        <a href="">
+                            <h4>Guns & Roses</h4>
+                        </a>
+                        <a href="">
+                            <p>Thaman S</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static/ya ali.jpg" alt="Ya Ali"></a>
+                        <a href="">
+                            <h4>Ya Ali</h4>
+                        </a>
+                        <a href="">
+                            <p>Gangster OST</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static/Kashish.jpg" alt="Kashish"></a>
+                        <a href="">
+                            <h4>Kashish</h4>
+                        </a>
+                        <a href="">
+                            <p>Ashish Bhatia</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\mafia.jpg" alt="Mafia"></a>
+                        <a href="">
+                            <h4>Mafia</h4>
+                        </a>
+                        <a href="">
+                            <p>Honay Singh</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\Yaari.jpg" alt="Yaari"></a>
+                        <a href="">
+                            <h4>Yaari</h4>
+                        </a>
+                        <a href="">
+                            <p>Masoom Sharma</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\chogada.jpg" alt="chogada"></a>
+                        <a href="">
+                            <h4>Chogada</h4>
+                        </a>
+                        <a href="">
+                            <p>Darshan Rawal,Asees Kaur</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="scrollSlider('slider', 1)">→</button>
+            </div>
+
+            <div class="right-lower-nav">
+                <a href="">
+                    <h2>Popular artists</h2>
+                </a>
+                <a href="">Show all</a>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="arrow left" onclick="scrollSlider('artists-slider', -1)">←</button>
+                <div class="artists-slider" id="artists-slider">
+                    <div class="artist">
+                        <a href=""><img src="static/pritam.jpeg" alt="Pritam"></a>
+                        <a href="">
+                            <h4>Pritam</h4>
+                        </a>
+                        <a href="">
+                            <p>Artist</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="artist">
+                        <a href=""><img src="static\arijit singh.jpeg" alt="Arijit Singh"></a>
+                        <a href="">
+                            <h4>Arijit Singh</h4>
+                        </a>
+                        <a href="">
+                            <p>Artist</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="artist">
+                        <a href=""><img src="static\atif aslam.jpeg" alt="Atif aslam"></a>
+                        <a href="">
+                            <h4>Badshah</h4>
+                        </a>
+                        <a href="">
+                            <p>Artist</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="artist">
+                        <a href=""><img src="static\vishal shekhar.jpeg" alt="Vishal Shekhar"></a>
+                        <a href="">
+                            <h4>Neha Kakkar</h4>
+                        </a>
+                        <a href="">
+                            <p>Artist</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="artist">
+                        <a href=""><img src="static\honey singh.jpeg" alt="Honey Singh"></a>
+                        <a href="">
+                            <h4>Honey Singh</h4>
+                        </a>
+                        <a href="">
+                            <p>Artist</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="artist">
+                        <a href=""><img src="static\sunudhi chouhan.jpeg" alt="Sunidhi Chauhan"></a>
+                        <a href="">
+                            <h4>Sunidhi C.</h4>
+                        </a>
+                        <a href="">
+                            <p>Artist</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="artist">
+                        <a href=""><img src="static\shreya ghosal.jpeg" alt="Shreya Ghoshal"></a>
+                        <a href="">
+                            <h4>Shreya G.</h4>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="scrollSlider('artists-slider', 1)">→</button>
+            </div>
+            <div class="right-lower2-nav">
+                <a href="">
+                    <h2>Popular albums and singles</h2>
+                </a>
+                <a href="">Show all</a>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="arrow left" onclick="scrollSlider('album-slider', -1)">←</button>
+                <div class="album-slider" id="album-slider">
+                    <div class="card">
+                        <a href=""><img src="static\Aashiqui-2.jpg" alt="Aashiqui-2"></a>
+                        <a href="">
+                            <h4>Aashiqui-2</h4>
+                        </a>
+                        <a href="">
+                            <p>Mithun,Ankit Tiwari</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\Yeh-Jawaani-Hai-Deewani.jpg" alt="Yeh-Jawaani-Hai-Deewani"></a>
+                        <a href="">
+                            <h4>Yeh-Jawaani-Hai-Deewani</h4>
+                        </a>
+                        <a href="">
+                            <p>Pritam</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\Sanam-Teri-Kasam.jpg" alt="Sanam-Teri-Kasam"></a>
+                        <a href="">
+                            <h4>Sanam-Teri-Kasam</h4>
+                        </a>
+                        <a href="">
+                            <p>Himesh Reshamiya,Sameer Anjaan</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\Finding-Her.jpg" alt="Finding-Her"></a>
+                        <a href="">
+                            <h4>finding</h4>
+                        </a>
+                        <a href="">
+                            <p>Kushagra,Bharath,Shaheal</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\Young-G-O-A-T.jpg" alt="Young-G-O-A-T"></a>
+                        <a href="">
+                            <h4>Young-G-O-A-T</h4>
+                        </a>
+                        <a href="">
+                            <p>Cheema Y,Gur Sidhu</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\Do-Patti.jpg" alt="Ranjhan"></a>
+                        <a href="">
+                            <h4>Ranjhan</h4>
+                        </a>
+                        <a href="">
+                            <p>Sachet-Parampara</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\ArijitSinghLoveSongs.jpg" alt="love-songs"></a>
+                        <a href="">
+                            <h4>Arijit Singh love-songs</h4>
+                        </a>
+                        <a href="">
+                            <p>Arijit Singh</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href=""><img src="static\Making-Memories.jpg" alt="Making-Memories"></a>
+                        <a href="">
+                            <h4>Making-Memories</h4>
+                        </a>
+                        <a href="">
+                            <p>Karan Aujla,Ikky</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="scrollSlider('album-slider', 1)">→</button>
+            </div>
+
+            <div class="right-lower3-nav">
+                <a href="">
+                    <h2>Popular radio</h2>
+                </a>
+                <a href="">Show all</a>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="arrow left" onclick="scrollSlider('radio-slider', -1)">←</button>
+                <div class="radio-slider" id="radio-slider">
+                    <div class="card1">
+                        <a href=""><img src="static\radio arijit singh" alt="arijit singh"></a>
+
+                        <a href="">
+                            <p>With Jeet Gannguli, Atif Aslam,<br> Pritam and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio kk.jpg" alt="kk"></a>
+
+                        <a href="">
+                            <p>With Pritam, Mustafa Zahid,<br> Ankit Tiwari and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio shreya ghosal.jpg" alt="shreya ghosal"></a>
+
+                        <a href="">
+                            <p>With A.R. Rahman, Atif Aslam,<br> Arijit Singh and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio alka yagnik.jpg" alt="alka yagnik"></a>
+
+                        <a href="">
+                            <p>With Vinod Rathod, Kumar <br>Sanu, Udit Narayan and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio diljit dosanjh.jpg" alt="diljit dosanjh"></a>
+
+                        <a href="">
+                            <p>With Shubh, Karan Aujla,<br> AP Dhillon and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio ar rahman.jpg" alt="ar rahman"></a>
+
+                        <a href="">
+                            <p>With Hariharan, Unnikrishnan,<br> Anirudh Ravichander and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio yo yo honey singh.jpg" alt=" yo yo honey singh"></a>
+
+                        <a href="">
+                            <p>With Guru Randhawa, Harrdy <br>Sandhu, Pritam and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio sidhu musewala.jpg" alt="sidhu musewala"></a>
+
+                        <a href="">
+                            <p>With Shubh, AP Dhillon,<br> Prem Dhillon and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio kishore kumar.jpg" alt="kishore kumar"></a>
+
+                        <a href="">
+                            <p>With Mukesh, Tabassum, <br>Hemant Kumar and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\radio kumar sanu.jpg" alt="kumar sanu"></a>
+
+                        <a href="">
+                            <p>With Jatin-Lalit, Alka Yagnik,<br> Anuradha Paudwal and more</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="scrollSlider('radio-slider', 1)">→</button>
+            </div>
+
+            <div class="right-lower4-nav">
+                <a href="">
+                    <h2>Featured Charts</h2>
+                </a>
+                <a href="">Show all</a>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="arrow left" onclick="scrollSlider('chart-slider', -1)">←</button>
+                <div class="chart-slider" id="chart-slider">
+                    <div class="card1">
+                        <a href=""><img src="static\top songs global.jpg" alt="top songs global"></a>
+
+                        <a href="">
+                            <p>Your weekly update of the most
+                                <br>played tracks right now - Global.
+                            </p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\top songs india.jpg" alt="top songs india"></a>
+
+                        <a href="">
+                            <p>Your weekly update of the most
+                                <br> played tracks right now - India.
+                            </p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\top 50 global.jpeg" alt="top 50 global"></a>
+
+                        <a href="">
+                            <p>Your daily update of the most
+                                <br> played tracks right now - Global.
+                            </p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\top 50 india.jpg" alt="top 50 india"></a>
+
+                        <a href="">
+                            <p>Your daily update of the most <br> played tracks right now - India.</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\viral 50 global.jpg" alt="viral 50 global"></a>
+
+                        <a href="">
+                            <p>Your daily update of the most <br>viral tracks right now - Global.</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+                    <div class="card1">
+                        <a href=""><img src="static\viral 50 india.jpg" alt="viral 50 india"></a>
+
+                        <a href="">
+                            <p>Your daily update of the most <br>viral tracks right now - India.</p>
+                        </a>
+                        <a href="">
+                            <div class="play"><i class="fa-solid fa-play"></i></div>
+                        </a>
+                    </div>
+
+                </div>
+                <button class="arrow right" onclick="scrollSlider('chart-slider', 1)">→</button>
+            </div>
+       
+
+            <hr>
+            <footer>
+                <div class="footer">
+                    
+                    <div class="foot-div">
+                    <h4>Company</h4>
+                    <a href="#">About</a><br>
+                    <a href="#">Jobs</a><br>
+                    <a href="#">For the record</a>
+                    </div>
+               
+
+                
+                    <div class="foot-div">
+                    <h4>Communities</h4>
+                    <a href="#">For Artists</a><br>
+                    <a href="#">Developers</a><br>
+                    <a href="#">Advertising</a><br>
+                    <a href="#">Investors</a><br>
+                    <a href="#">Vendors</a>
+                    </div>
+               
+
+                
+                    <div class="foot-div">
+                    <h4>Useful links</h4>
+                    <a href="#">Support</a><br>
+                    <a href="#">Free Mobile App</a><br>
+                    <a href="#">Popular by Country</a><br>
+                    <a href="#">Import your music</a>
+                    </div>
+                
+
+                
+                    <div class="foot-div">
+                    <h4>Spotify Plans</h4>
+                    <a href="#">Premium Individual</a><br>
+                    <a href="#">Premium Duo</a><br>
+                    <a href="#">Premium Family</a><br>
+                    <a href="#">Premium Student</a><br>
+                    <a href="#">Spotify Free</a>
+                    </div>
+                
+
+                   <div class="footer-social">
+                    <a href="" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                   </div>
+
+                  
+                </div>
+                <hr>
+
+                 <div class="copyright">
+                        &copy; 2025 Spotify AB
+                    </div>
+                </div>
+            </footer>
+            
+
+        
+    </div> 
+
+    <script>
+        function scrollSlider(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const scrollAmount = 190; // Card width (150px) + padding/gap (~40px)
+            slider.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>

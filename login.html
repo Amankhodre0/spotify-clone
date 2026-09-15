@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spotify login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+ 
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+            <a href=""><i class="fa-brands fa-spotify"></i></a>
+        </div>
+        
+        <h1>Welcome back</h1>
+
+        <form class="login-form">
+            <label for="email">Email or username</label>
+            <input type="text" id="email" name="email" placeholder="Email or username" required>
+            
+            <button type="submit" class="continue-btn green-btn">Continue</button>
+        </form>
+
+        <div class="divider">
+            <span class="or-text">or</span>
+        </div>
+
+        <button class="social-btn">
+            <span class="icon"><i class="fa-solid fa-mobile"></i></span> Continue with phone number
+        </button>
+        <button class="social-btn">
+            <span class="icon"><i class="fa-brands fa-google"></i></span> Continue with Google
+        </button>
+        <button class="social-btn">
+            <span class="icon"><i class="fa-brands fa-facebook"></i></span> Continue with Facebook
+        </button>
+        <button class="social-btn">
+            <span class="icon"><i class="fa-brands fa-apple"></i></span> Continue with Apple
+        </button>
+
+        <h4>Don't have an account?</h4>
+
+        <div class="sign">
+            <a href=""><h3>Sign up</h3></a>
+        </div>
+
+        <p>This site is protected by reCAPTCHA and the Google <span><a href="">Privacy Policy</a></span> and <span><a href="">Terms of Service</a></span> apply.</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+ /* GLOBAL STYLES & RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #121212; /* Dark background */
+    color: #FFFFFF; /* White text */
+    /* Use Flexbox to center the content on the entire screen */
+    display: flex;
+    justify-content: center; /* Centers horizontally (X-plane) */
+    align-items: center; /* Centers vertically (Y-plane) */
+    min-height: 100vh; /* Ensure the body takes up full viewport height */
+    padding: 20px;
+}
+
+/* CONTAINER STYLING */
+.login-container {
+    background-color: #121212; /* Black background for the container */
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px; /* Limits the width of the form for better design */
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+}
+
+h1 {
+    font-size: 2.2em;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+/* FORM STYLING */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text labels to the left */
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.login-form input:hover{
+    border: 1.5px solid white;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #535353;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
+/* BUTTON STYLING */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 50px; /* Rounded pill shape */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.1s ease;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.green-btn {
+    background-color: #1DB954; /* Spotify green */
+    color: #000000;
+}
+
+.social-btn {
+    background-color: #121212;
+    color: #FFFFFF;
+    border: 2px solid #535353;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.social-btn .icon {
+    font-size: 1.3em;
+    margin-right: 15px;
+   
+}
+
+/* DIVIDER STYLING */
+.divider {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: #535353;
+    margin: 30px 0 20px 0;
+}
+
+.or-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #121212; 
+    padding: 0 10px;
+    color: #a7a7a7;
+    font-size: 0.9em;
+}
+
+h4{
+    margin-top:50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #535353;
+    }
+
+.sign{
+    margin-top: 15px;
+}
+.sign a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    
+}
+
+.sign a:hover{
+    font-size: 13.3px;
+}
+
+p{
+    font-size: 12px;
+    margin-top: 30px;
+    color: #a7a7a7;
+}
+
+p a{
+
+    color: #a7a7a7;
+}
+
